@@ -14,6 +14,7 @@ body {
     width: 100%;
     height: 100%;
     text-align: center;
+    background-color: #343434;
 }
 
 .header {
@@ -45,4 +46,8 @@ body {
     font-size: 18px;
     font-weight: 300;
     margin-bottom: 30px;
+}
+
+.projects table {
+    width: 100%;
 }
