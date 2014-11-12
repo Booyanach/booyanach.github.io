@@ -14,17 +14,16 @@ body {
     width: 100%;
     height: 100%;
     text-align: center;
-    background-color: #343434;
+    background-color: #FFFFFF;
 }
 
 .header {
-    top: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    padding: 10px;
+    width: 100%;
+    position: relative;
+    padding-bottom: 10px;
     padding-top: 50px;
     background-color: #3489AF;
+    border-bottom: 5px solid #343434;
 }
 
 .avatar_url {
@@ -48,6 +47,48 @@ body {
     margin-bottom: 30px;
 }
 
-.projects table {
+.projects {
+    padding: 30px;
     width: 100%;
+    box-sizing: border-box;
+}
+
+.project {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #343434;
+    border-bottom: 5px solid #141414;
+    border-radius: 5px;
+    margin: 5px;
+    color: #FFFFFF;
+    background-color: #545454;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.project:hover {
+    border: 1px solid #14698F;
+    border-bottom: 5px solid #14698F;
+    background-color: #3489AF;
+}
+
+.project .name {
+    position: absolute;
+    word-break: break-all;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background-color: #141414;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+    transition: all 0.3s;
+}
+
+.project:hover .name {
+    background-color: #14698F;
 }

@@ -2,12 +2,11 @@ $(document).ready(function() {
     var module = function() {
         var self = this;
         
-        self.loadMe();
-        self.loadProjects();
-        self.drawMe();
+        self.loadPage();
+        self.draw();
     };
     
-    module.prototype.loadProjects = function() {
+    module.prototype.loadPage = function() {
         var self = this;
         
         if(!localStorage.repos) {
@@ -18,10 +17,6 @@ $(document).ready(function() {
         } else {
             self.handleStorage('repos', localStorage.repos);
         }
-    };
-    
-    module.prototype.loadMe = function() {
-        var self = this;
         
         if (!localStorage.me) {
          $.get('https://api.github.com/users/booyanach', function(response) {
@@ -37,9 +32,9 @@ $(document).ready(function() {
         this[key] = JSON.parse(value);
     };
     
-    module.prototype.drawMe = function() {
+    module.prototype.draw = function() {
         var self = this,
-            classes = Object.keys(this.me);
+            classes = Object.keys(self.me);
         $.each(classes, function(idx, item) {
             var value = self.me[item];
              
@@ -52,10 +47,22 @@ $(document).ready(function() {
                     } else if(element.hasClass('image')) {
                         element.css({
                             'background-image': 'url("' + value + '")'
-                        })
+                        });
                     }
                 }
             })
+        });
+        
+         $.each(self.repos, function(index, project) {
+             console.log(project);
+            var container = $('<div class="project"/>').on('click', function() {
+                var win = window.open(project.html_url, '_blank');
+                win.focus();
+            }),
+                name = $('<div class="name"/>').html(project.name).appendTo(container),
+                language = $('<div class="language"/>').html(project.language);
+            
+            container.appendTo($('.projects'));
         });
     };
     
