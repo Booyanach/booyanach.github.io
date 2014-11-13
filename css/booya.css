@@ -34,6 +34,7 @@ body {
     margin-bottom: 10px;
     border-radius: 200px;
     background-size: 200px 200px;
+    border: 5px solid #24799F;
 }
 
 .login {
@@ -64,9 +65,13 @@ body {
     border-radius: 5px;
     margin: 5px;
     color: #FFFFFF;
-    background-color: #545454;
+    background-size: 200px;
+    background-color:rgb(206,220,231);
+    background-image: url("http://www.iconsdb.com/icons/download/black/github-10-256.png");
+    background-position: 10px 0px;
     cursor: pointer;
     transition: all 0.3s;
+    box-shadow: 0px 4px 5px #888888;
 }
 
 .project:hover {

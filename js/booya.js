@@ -65,7 +65,6 @@ $(document).ready(function() {
         
         self.watch('repos', function(id, oldval, newval) {
              $.each(newval, function(index, project) {
-                 console.log(project);
                 var container = $('<div class="project"/>').on('click', function() {
                     var win = window.open(project.html_url, '_blank');
                     win.focus();
